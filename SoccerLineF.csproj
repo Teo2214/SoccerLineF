@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1212E58C-1DB1-436C-9C35-A0707D06E5AE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SoccerLineF</RootNamespace>
+    <AssemblyName>SoccerLineF</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\DSC\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A632E191C568D9ECE7A1EA87255427AA9DA18245</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SoccerLineF_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsConexion.cs" />
+    <Compile Include="CALENDARIO\clsRegistroCalendario.cs" />
+    <Compile Include="TECNICO\frmConsultaTecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TECNICO\frmConsultaTecnico.Designer.cs">
+      <DependentUpon>frmConsultaTecnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TECNICO\clsTecnicoBd.cs" />
+    <Compile Include="ESTADISTICAS\clsEstadisticasBd.cs" />
+    <Compile Include="ESTADISTICAS\frmRegistroEstadistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ESTADISTICAS\frmRegistroEstadistica.Designer.cs">
+      <DependentUpon>frmRegistroEstadistica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ESTADISTICAS\frmConsultaEstadistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ESTADISTICAS\frmConsultaEstadistica.Designer.cs">
+      <DependentUpon>frmConsultaEstadistica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CALENDARIO\frmRegistroCalendario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CALENDARIO\frmRegistroCalendario.Designer.cs">
+      <DependentUpon>frmRegistroCalendario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CALENDARIO\frmConsultaFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CALENDARIO\frmConsultaFecha.Designer.cs">
+      <DependentUpon>frmConsultaFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TECNICO\frmRegistroTecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TECNICO\frmRegistroTecnico.Designer.cs">
+      <DependentUpon>frmRegistroTecnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RESULTADOS\frmConsultaResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESULTADOS\frmConsultaResultado.Designer.cs">
+      <DependentUpon>frmConsultaResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIDOS\frmConsultaPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PARTIDOS\frmConsultaPartido.Designer.cs">
+      <DependentUpon>frmConsultaPartido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JUGADORES\frmJugadorConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JUGADORES\frmJugadorConsulta.Designer.cs">
+      <DependentUpon>frmJugadorConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JUGADORES\clsJugadoresBd.cs" />
+    <Compile Include="EQUIPOS\clsModificacionEquipoBd.cs" />
+    <Compile Include="PARTIDOS\clsPartidosBd.cs" />
+    <Compile Include="INICIO\clsRegistroBd.cs" />
+    <Compile Include="RESULTADOS\clsResultadoBd.cs" />
+    <Compile Include="EQUIPOS\frmEquiposConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQUIPOS\frmEquiposConsulta.Designer.cs">
+      <DependentUpon>frmEquiposConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INICIO\frmIniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INICIO\frmIniciarSesion.Designer.cs">
+      <DependentUpon>frmIniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INICIO\frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INICIO\frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JUGADORES\frmJugadorRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JUGADORES\frmJugadorRegistro.Designer.cs">
+      <DependentUpon>frmJugadorRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MENUS\frmMenuAficionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MENUS\frmMenuAficionado.Designer.cs">
+      <DependentUpon>frmMenuAficionado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MENUS\frmMenuDirectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MENUS\frmMenuDirectivo.Designer.cs">
+      <DependentUpon>frmMenuDirectivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIDOS\frmRegistrarPartidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PARTIDOS\frmRegistrarPartidos.Designer.cs">
+      <DependentUpon>frmRegistrarPartidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INICIO\frmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INICIO\frmRegistro.Designer.cs">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQUIPOS\frmRegistroEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQUIPOS\frmRegistroEquipos.Designer.cs">
+      <DependentUpon>frmRegistroEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RESULTADOS\frmRegistroResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RESULTADOS\frmRegistroResultados.Designer.cs">
+      <DependentUpon>frmRegistroResultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EQUIPOS\frmEquiposConsulta.resx">
+      <DependentUpon>frmEquiposConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ESTADISTICAS\frmRegistroEstadistica.resx">
+      <DependentUpon>frmRegistroEstadistica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ESTADISTICAS\frmConsultaEstadistica.resx">
+      <DependentUpon>frmConsultaEstadistica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CALENDARIO\frmRegistroCalendario.resx">
+      <DependentUpon>frmRegistroCalendario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CALENDARIO\frmConsultaFecha.resx">
+      <DependentUpon>frmConsultaFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TECNICO\frmConsultaTecnico.resx">
+      <DependentUpon>frmConsultaTecnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TECNICO\frmRegistroTecnico.resx">
+      <DependentUpon>frmRegistroTecnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESULTADOS\frmConsultaResultado.resx">
+      <DependentUpon>frmConsultaResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PARTIDOS\frmConsultaPartido.resx">
+      <DependentUpon>frmConsultaPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JUGADORES\frmJugadorConsulta.resx">
+      <DependentUpon>frmJugadorConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INICIO\frmIniciarSesion.resx">
+      <DependentUpon>frmIniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INICIO\frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JUGADORES\frmJugadorRegistro.resx">
+      <DependentUpon>frmJugadorRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MENUS\frmMenuAficionado.resx">
+      <DependentUpon>frmMenuAficionado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MENUS\frmMenuDirectivo.resx">
+      <DependentUpon>frmMenuDirectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PARTIDOS\frmRegistrarPartidos.resx">
+      <DependentUpon>frmRegistrarPartidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INICIO\frmRegistro.resx">
+      <DependentUpon>frmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQUIPOS\frmRegistroEquipos.resx">
+      <DependentUpon>frmRegistroEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RESULTADOS\frmRegistroResultados.resx">
+      <DependentUpon>frmRegistroResultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SoccerLineF_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
