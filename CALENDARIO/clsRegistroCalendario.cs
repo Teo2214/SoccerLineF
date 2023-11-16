@@ -8,21 +8,8 @@ using System.Threading.Tasks;
 
 namespace SoccerLineF
 {
-    /// <summary>
-    /// Clase que representa un registro de calendario de partidos.
-    /// </summary>
-
-
-
     class clsRegistroCalendario
     {
-        /// <summary>
-        /// Obtiene o establece el ID del calendario.
-        /// Obtiene o establece la fecha del partido.
-        /// Obtiene o establece el ID del partido.
-        /// </summary>
-
-
         public int CalendarioID { get; set; }
         public DateTime FechaPartido { get; set; }
         public int PartidoID { get; set; }
@@ -33,12 +20,7 @@ namespace SoccerLineF
 
 
         }
-        /// <summary>
-        /// Constructor de la clase clsRegistroCalendario con parámetros.
-        /// </summary>
-        /// <param name="CalendarioID">ID del calendario.</param>
-        /// <param name="FechaPartido">Fecha del partido.</param>
-        /// <param name="PartidoID">ID del partido.</param>
+
 
         public clsRegistroCalendario(int CalendarioID, DateTime FechaPartido, int PartidoID)
         {
@@ -47,10 +29,7 @@ namespace SoccerLineF
             this.PartidoID = PartidoID;
             
         }
-        /// <summary>
-        /// Inserta un nuevo registro en la base de datos.
-        /// </summary>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
+
         public bool InsertarDato()
         {
             clsConexion conexion = new clsConexion();
@@ -66,11 +45,6 @@ namespace SoccerLineF
         }
 
 
-        /// <summary>
-        /// Consulta todos los registros de calendario en la base de datos.
-        /// </summary>
-        /// <returns>Un DataTable con los resultados de la consulta.</returns>
-
         public DataTable Consultar()
         {
             clsConexion conexion = new clsConexion();
@@ -81,16 +55,8 @@ namespace SoccerLineF
             SqlDataAdapter da = new SqlDataAdapter(comando);
             da.Fill(dt);
             return dt;
-
-
-          
         }
-        /// <summary>
-        /// Elimina un registro de calendario de la base de datos.
-        /// </summary>
 
-        // <param name="CalendarioID">ID del calendario a eliminar.</param>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
         public bool Eliminar(int CalendarioID)
         {
             clsConexion conexion = new clsConexion();
@@ -101,18 +67,7 @@ namespace SoccerLineF
             comando.Parameters.AddWithValue("@CalendarioID", this.CalendarioID);
             comando.ExecuteNonQuery();
             return true;
-
-
         }
-
-
-
-
-        /// <summary>
-        /// Modifica un registro de calendario en la base de datos.
-        /// </summary>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
-
 
         public bool Modificar()
         {
@@ -127,17 +82,6 @@ namespace SoccerLineF
             sql.ExecuteNonQuery();
             return true;
         }
-
-
-
-
-        /// <summary>     
-        /// Selecciona registros de calendario basados en la fecha del partido.
-        /// </summary>
-        
-        /// <param name="FechaPartido">Fecha del partido para la selección.</param>
-        /// <returns>Un DataTable con los resultados de la selección.</returns>
-
 
         public DataTable Seleccionar(DateTime FechaPartido)
         {

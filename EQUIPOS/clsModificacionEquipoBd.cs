@@ -8,22 +8,8 @@ using System.Threading.Tasks;
 
 namespace SoccerLineF
 {
-
-    /// <summary>
-    /// Clase que maneja la modificación de datos de equipos en la base de datos.
-    /// </summary>
-
-
-
     class clsModificacionEquipoBd
     {
-        /// <summary>
-        /// Obtiene o establece el ID del equipo.
-        /// Obtiene o establece el nombre del equipo
-        /// Obtiene o establece la ubicación del equipo.
-        /// Obtiene o establece los colores del equipo.
-        ///  Obtiene o establece el ID del técnico del equipo
-        /// </summary>
         public int EquipoID { get; set; }
         public string Nombre { get; set; }
         public string Ubicacion { get; set; }
@@ -36,15 +22,8 @@ namespace SoccerLineF
 
 
         }
-        /// <summary>
-        /// Constructor de la clase clsModificacionEquipoBd con parámetros.
-        /// </summary>
-        /// <param name="EquipoID">ID del equipo.</param>
-        /// <param name="Nombre">Nombre del equipo.</param>
-        /// <param name="Ubicacion">Ubicación del equipo.</param>
-        /// <param name="Colores">Colores del equipo.</param>
 
-        /// <param name="TecnicoID">ID del técnico del equipo.</param>
+
         public clsModificacionEquipoBd(int EquipoID, string Nombre, string Ubicacion, string Colores, int TecnicoID)
         {
             this.EquipoID = EquipoID;
@@ -53,10 +32,7 @@ namespace SoccerLineF
             this.Colores = Colores;
             this.TecnicoID = TecnicoID;
         }
-        /// <summary>
-        /// Inserta un nuevo equipo en la base de datos.
-        /// </summary>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
+
         public bool InsertarDato()
         {
             clsConexion conexion = new clsConexion();
@@ -72,10 +48,7 @@ namespace SoccerLineF
             comando.ExecuteNonQuery();
             return true;
         }
-        /// <summary>
-        /// Consulta todos los equipos en la base de datos.
-        /// </summary>
-        /// <returns>Un DataTable con los resultados de la consulta.</returns>
+
 
         public DataTable Consultar()
         {
@@ -88,11 +61,6 @@ namespace SoccerLineF
             da.Fill(dt);
             return dt;
         }
-        /// <summary>
-        /// Elimina un equipo de la base de datos.
-        /// </summary>
-        /// <param name="EquipoID">ID del equipo a eliminar.</param>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
 
         public bool EliminarEquipo(int EquipoID)
         {
@@ -105,10 +73,7 @@ namespace SoccerLineF
             comando.ExecuteNonQuery();
             return true;
         }
-        /// <summary>
-        /// Modifica la información de un equipo en la base de datos.
-        /// </summary>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
+
         public bool ModificarEquipo()
         {
             clsConexion conexion = new clsConexion();
@@ -124,12 +89,6 @@ namespace SoccerLineF
             sql.ExecuteNonQuery();
             return true;
         }
-
-        /// <summary>
-        /// Selecciona un equipo basado en su ID.
-        /// </summary>
-        /// <param name="EquipoID">ID del equipo a seleccionar.</param>
-        /// <returns>Un DataTable con los resultados de la selección.</returns>
 
         public DataTable SeleccionarEquipo(int EquipoID)
         {

@@ -8,41 +8,21 @@ using System.Threading.Tasks;
 
 namespace SoccerLineF
 {
-    /// <summary>
-    /// Clase que maneja la información de los partidos en la base de datos.
-    /// </summary>
     class clsPartidosBd
     {
-        /// <summary>
-        /// Obtiene o establece el ID del partido.
-        /// Obtiene o establece el lugar donde se llevará a cabo el partido.
-        /// Obtiene o establece la capacidad del lugar donde se llevará a cabo el partido.
-        /// Obtiene o establece el nombre del equipo local.
-        /// Obtiene o establece el nombre del equipo Visitante.
-        ///  Constructor predeterminado de la clase clsPartidosBd
-        /// </summary>
         public int PartidoID { get; set; }
         public string Lugar { get; set; }
         public int CapacidadLugar { get; set; }
         public string EquipoLocal { get; set; }
         public string EquipoVisitante { get; set; }
 
-        /// <summary>
-        /// Constructor predeterminado de la clase clsPartidosBd.
-        /// </summary>
+
 
         public clsPartidosBd()
         {
 
         }
-        /// <summary>
-        /// Constructor de la clase clsPartidosBd con parámetros.
-        /// </summary>
-        /// <param name="PartidoID">ID del partido.</param>
-        /// <param name="Lugar">Lugar donde se llevará a cabo el partido.</param>
-        /// <param name="CapacidadLugar">Capacidad del lugar donde se llevará a cabo el partido.</param>
-        /// <param name="EquipoLocal">Nombre del equipo local.</param>
-        /// <param name="EquipoVisitante">Nombre del equipo visitante.</param>
+
         public clsPartidosBd(int PartidoID, string Lugar, int CapacidadLugar, string EquipoLocal, string EquipoVisitante)
         {
             this.PartidoID = PartidoID;
@@ -51,10 +31,7 @@ namespace SoccerLineF
             this.EquipoLocal = EquipoLocal;
             this.EquipoVisitante = EquipoVisitante;
         }
-        /// <summary>
-        /// Inserta un nuevo partido en la base de datos.
-        /// </summary>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
+
         public bool InsertarDato()
         {
             clsConexion conexion = new clsConexion();
@@ -70,10 +47,7 @@ namespace SoccerLineF
             comando.ExecuteNonQuery();
             return true;
         }
-        /// <summary>
-        /// Consulta la información de todos los partidos en la base de datos.
-        /// </summary>
-        /// <returns>Un DataTable con los resultados de la consulta.</returns>
+
         public DataTable Consultar()
         {
             clsConexion conexion = new clsConexion();
@@ -86,11 +60,7 @@ namespace SoccerLineF
             return dt;
 
         }
-        /// <summary>
-        /// Elimina un partido de la base de datos.
-        /// </summary>
-        /// <param name="PartidoID">ID del partido a eliminar.</param>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
+
         public bool EliminarPartido(int PartidoID)
         {
             clsConexion conexion = new clsConexion();
@@ -102,10 +72,7 @@ namespace SoccerLineF
             comando.ExecuteNonQuery();
             return true;
         }
-        /// <summary>
-        /// Modifica la información de un partido en la base de datos.
-        /// </summary>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
+
         public bool ModificarPartido()
         {
             clsConexion conexion = new clsConexion();
@@ -121,11 +88,7 @@ namespace SoccerLineF
             sql.ExecuteNonQuery();
             return true;
         }
-        /// <summary>
-        /// Selecciona la información de un partido basado en su ID.
-        /// </summary>
-        /// <param name="PartidoID">ID del partido a seleccionar.</param>
-        /// <returns>Un DataTable con los resultados de la selección.</returns>
+
         public DataTable SeleccionarPartido(int PartidoID)
         {
             clsConexion conexion = new clsConexion();

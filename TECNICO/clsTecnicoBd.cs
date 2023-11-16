@@ -8,25 +8,14 @@ using System.Threading.Tasks;
 
 namespace SoccerLineF
 {
-    /// <summary>
-    /// Clase que maneja la información de los técnicos en la base de datos.
-    /// </summary>
     class clsTecnicoBd
     {
-        /// <summary>
-        /// Obtiene o establece el ID del técnico.
-        /// Obtiene o establece el nombre del técnico
-        /// Obtiene o establece el apellido del técnico.
-        /// Obtiene o establece el expediente del técnico.
-        /// </summary>
         public int TecnicoID { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Expediente { get; set; }
+        
 
-        /// <summary>
-        /// Constructor predeterminado de la clase clsTecnicoBd.
-        /// </summary>
 
         public clsTecnicoBd()
         {
@@ -34,13 +23,6 @@ namespace SoccerLineF
 
         }
 
-        /// <summary>
-        /// Constructor de la clase clsTecnicoBd con parámetros.
-        /// </summary>
-        /// <param name="TecnicoID">ID del técnico.</param>
-        /// <param name="Nombre">Nombre del técnico.</param>
-        /// <param name="Apellido">Apellido del técnico.</param>
-        /// <param name="Expediente">Expediente del técnico.</param>
 
         public clsTecnicoBd(int TecnicoID, string Nombre, string Apellido, string Expediente)
         {
@@ -50,10 +32,7 @@ namespace SoccerLineF
             this.Expediente = Expediente;
             
         }
-        /// <summary>
-        /// Inserta un nuevo técnico en la base de datos.
-        /// </summary>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
+
         public bool InsertarDato()
         {
             clsConexion conexion = new clsConexion();
@@ -68,10 +47,7 @@ namespace SoccerLineF
             comando.ExecuteNonQuery();
             return true;
         }
-         /// <summary>
-         /// Consulta la información de todos los técnicos en la base de datos.
-         /// </summary>
-         /// <returns>Un DataTable con los resultados de la consulta.</returns>
+
 
         public DataTable Consultar()
         {
@@ -84,11 +60,7 @@ namespace SoccerLineF
             da.Fill(dt);
             return dt;
         }
-        /// <summary>
-        /// Elimina un técnico de la base de datos.
-        /// </summary>
-        /// <param name="TecnicoID">ID del técnico a eliminar.</param>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
+
         public bool Eliminar(int TecnicoID)
         {
             clsConexion conexion = new clsConexion();
@@ -100,10 +72,7 @@ namespace SoccerLineF
             comando.ExecuteNonQuery();
             return true;
         }
-        /// <summary>
-        /// Modifica la información de un técnico en la base de datos.
-        /// </summary>
-        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
+
         public bool Modificar()
         {
             clsConexion conexion = new clsConexion();
@@ -118,11 +87,7 @@ namespace SoccerLineF
             sql.ExecuteNonQuery();
             return true;
         }
-        /// <summary>
-        /// Selecciona la información de un técnico basado en su ID.
-        /// </summary>
-        /// <param name="TecnicoID">ID del técnico a seleccionar.</param>
-        /// <returns>Un DataTable con los resultados de la selección.</returns>
+
         public DataTable Seleccionar(int TecnicoID)
         {
             clsConexion conexion = new clsConexion();
