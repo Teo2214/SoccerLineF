@@ -17,39 +17,27 @@ namespace SoccerLineF
             InitializeComponent();
         }
 
-
-        // Método que se ejecuta al hacer clic en el botón "Registrarse"
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-
-            // Se crea una instancia del formulario de registro y se muestra, ocultando el formulario actual
-            frmRegistro registro = new frmRegistro();
+           frmRegistro registro = new frmRegistro();
             registro.Show();
             this.Hide();
         }
-
-
 
         private void frmInicio_Load(object sender, EventArgs e)
         {
 
         }
 
-        // Método que se ejecuta al hacer clic en el botón "Iniciar Sesión"
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-
-            // Se crea una instancia del formulario de inicio de sesión y se muestra, ocultando el formulario actual
             frmIniciarSesion iniciarSesion = new frmIniciarSesion();
             iniciarSesion.Show();
             this.Hide();
         }
 
-   
         private void panelCentral_Paint(object sender, PaintEventArgs e)
         {
-
-            // Se habilita el temporizador al pintar el panel central
             timerInicio.Enabled = true;
         }
 
@@ -60,17 +48,12 @@ namespace SoccerLineF
 
         private void timerInicio_Tick(object sender, EventArgs e)
         {
-            // Se actualiza la etiqueta de la hora con la hora actual formateada
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
-
-            // Se actualiza la etiqueta de la fecha con la fecha actual formateada
             lblFecha.Text = DateTime.Now.ToLongDateString();
         }
 
         private void btnTerminosCondiciones_Click(object sender, EventArgs e)
         {
-
-            // Se muestra un cuadro de mensaje con los términos y condiciones de uso
             MessageBox.Show("Términos y Condiciones de Uso para la Aplicación de Gestión Deportiva SoccerLine: Bienvenido/a a nuestra aplicación de gestión deportiva simulada. Antes de utilizar nuestra aplicación, por favor, lee detenidamente los siguientes términos y condiciones. Al acceder y utilizar nuestra aplicación, aceptas cumplir con estos términos"+
                 ". Si no estás de acuerdo con alguno de los términos a continuación, por favor, no utilices nuestra aplicación. 1. Uso Aceptable:La aplicación está destinada únicamente para fines de simulación de gestión deportiva. Cualquier otro uso no autorizado está prohibido. 2. Datos Personales:Al utilizar la aplicación, puedes proporcionar datos personales."+
                 " Nos comprometemos a proteger tu privacidad de acuerdo con nuestra Política de Privacidad. 3.Responsabilidad:No nos hacemos responsables de la precisión de los datos simulados o de las decisiones tomadas en la aplicación. La aplicación es solo para fines de entretenimiento y simulación. 4.Propiedad Intelectual:Todos los derechos de propiedad intelectual relacionados con la aplicación y su contenido son propiedad exclusiva nuestra."+
