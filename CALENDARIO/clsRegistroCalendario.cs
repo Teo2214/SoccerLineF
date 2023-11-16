@@ -83,11 +83,11 @@ namespace SoccerLineF
             return dt;
 
 
-            /// <summary>
-            /// Elimina un registro de calendario de la base de datos.
-            /// </summary>
+          
         }
-
+        /// <summary>
+        /// Elimina un registro de calendario de la base de datos.
+        /// </summary>
 
         // <param name="CalendarioID">ID del calendario a eliminar.</param>
         /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>

@@ -15,7 +15,7 @@ namespace SoccerLineF
     {
 
         // Cadena de conexión para la base de datos
-        string cadena = "Data Source=soccerline.cxjhy1d4snyo.us-east-2.rds.amazonaws.com;Initial Catalog=SoccerLineDB;User ID=admin;Password=Ma20042214";
+        string cadena = "Data Source=DESKTOP-6R2QN2C;Initial Catalog=SoccerLineDB;Integrated Security=True;";
 
         // Objeto SqlConnection para gestionar la conexión a la base de datos
         public SqlConnection conexion=new SqlConnection();
