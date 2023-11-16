@@ -8,8 +8,19 @@ using System.Threading.Tasks;
 
 namespace SoccerLineF
 {
+    /// <summary>
+    /// Clase que maneja la información de los jugadores en la base de datos.
+    /// </summary>
     class clsJugadoresBd
     {
+        /// <summary>
+        /// Obtiene o establece el ID del jugador.
+        /// Obtiene o establece el nombre del jugador.
+        /// Obtiene o establece el apellido del jugador.
+        /// Obtiene o establece la edad del jugador.
+        /// Obtiene o establece la posición del jugador.
+        /// Obtiene o establece el ID del equipo al que pertenece el jugador.
+        /// </summary>
         public int JugadorID { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -17,7 +28,9 @@ namespace SoccerLineF
         public string Posicion { get; set; }
         public int EquipoID { get; set; }
 
-
+        /// <summary>
+        /// Constructor predeterminado de la clase clsJugadoresBd.
+        /// </summary>
 
         public clsJugadoresBd()
         {
@@ -25,7 +38,15 @@ namespace SoccerLineF
 
         }
 
-
+        /// <summary>
+        /// Constructor de la clase clsJugadoresBd con parámetros.
+        /// </summary>
+        /// <param name="JugadorID">ID del jugador.</param>
+        /// <param name="Nombre">Nombre del jugador.</param>
+        /// <param name="Apellido">Apellido del jugador.</param>
+        /// <param name="Edad">Edad del jugador.</param>
+        /// <param name="Posicion">Posición del jugador.</param>
+        /// <param name="EquipoID">ID del equipo al que pertenece el jugador.</param>
         public clsJugadoresBd(int JugadorID, string Nombre, string Apellido, int Edad, string Posicion, int EquipoID)
         {
             this.JugadorID = JugadorID;
@@ -36,7 +57,10 @@ namespace SoccerLineF
             this.EquipoID = EquipoID;
 
         }
-
+        /// <summary>
+        /// Inserta un nuevo jugador en la base de datos.
+        /// </summary>
+        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
         public bool InsertarDato()
         {
             clsConexion conexion = new clsConexion();
@@ -54,7 +78,10 @@ namespace SoccerLineF
             return true;
         }
 
-
+        /// <summary>
+        /// Consulta la información de todos los jugadores en la base de datos.
+        /// </summary>
+        /// <returns>Un DataTable con los resultados de la consulta.</returns>
         public DataTable Consultar()
         {
             clsConexion conexion = new clsConexion();
@@ -66,7 +93,11 @@ namespace SoccerLineF
             da.Fill(dt);
             return dt;
         }
-
+        // <summary>
+        /// Elimina un jugador de la base de datos.
+        /// </summary>
+        /// <param name="JugadorID">ID del jugador a eliminar.</param>
+        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
         public bool EliminarJugador(int JugadorID)
         {
             clsConexion conexion = new clsConexion();
@@ -78,7 +109,10 @@ namespace SoccerLineF
             comando.ExecuteNonQuery();
             return true;
         }
-
+        /// <summary>
+        /// Modifica la información de un jugador en la base de datos.
+        /// </summary>
+        /// <returns>True si la operación es exitosa; de lo contrario, False.</returns>
         public bool ModificarJugador()
         {
             clsConexion conexion = new clsConexion();
@@ -95,7 +129,11 @@ namespace SoccerLineF
             sql.ExecuteNonQuery();
             return true;
         }
-
+        /// <summary>
+        /// Selecciona la información de un jugador basado en su ID.
+        /// </summary>
+        /// <param name="JugadorID">ID del jugador a seleccionar.</param>
+        /// <returns>Un DataTable con los resultados de la selección.</returns>
         public DataTable SeleccionarJugador(int JugadorID)
         {
             clsConexion conexion = new clsConexion();
