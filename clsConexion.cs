@@ -9,7 +9,7 @@ namespace SoccerLineF
 {
     class clsConexion
     {
-        string cadena = "Data Source=soccerline.cxjhy1d4snyo.us-east-2.rds.amazonaws.com;Initial Catalog=SoccerLineDB;User ID=admin;Password=Ma20042214";
+        string cadena = "Server=DESKTOP-6R2QN2C;Initial Catalog=SoccerLineDB;Initial Catalog=SoccerLineDB;Integrated Security=True;";
         public SqlConnection conexion=new SqlConnection();
 
         public clsConexion()
