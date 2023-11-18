@@ -14,8 +14,12 @@ namespace SoccerLineF
         [STAThread]
         static void Main()
         {
+            // Habilita los estilos visuales de la aplicación.
             Application.EnableVisualStyles();
+
+            // Establece el valor predeterminado para la representación de texto compatible con Windows.
             Application.SetCompatibleTextRenderingDefault(false);
+            // Ejecuta la aplicación, mostrando la ventana de inicio (frmInicio).
             Application.Run(new frmInicio());
         }
     }

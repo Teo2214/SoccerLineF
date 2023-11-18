@@ -8,12 +8,28 @@ using System.Threading.Tasks;
 
 namespace SoccerLineF
 {
+
+    /// <summary>
+    /// Clase que representa la gestión de registros en la tabla CalendarioPartidos.
+    /// </summary>
     class clsRegistroCalendario
     {
+
+        
+
+        /// <summary>
+        /// Obtiene o establece el identificador del calendario.
+        /// Obtiene o establece la fecha del partido.
+        /// Obtiene o establece el identificador del partido.
+        /// </summary>
         public int CalendarioID { get; set; }
         public DateTime FechaPartido { get; set; }
         public int PartidoID { get; set; }
 
+
+        /// <summary>
+        /// Constructor por defecto de la clase clsRegistroCalendario.
+        /// </summary>
 
         public clsRegistroCalendario()
         {
@@ -21,15 +37,23 @@ namespace SoccerLineF
 
         }
 
-
+        /// <summary>
+        /// Constructor que inicializa las propiedades de la clase clsRegistroCalendario.
+        /// </summary>
+        /// <param name="CalendarioID">Identificador del calendario.</param>
+        /// <param name="FechaPartido">Fecha del partido.</param>
+        /// <param name="PartidoID">Identificador del partido.</param>
         public clsRegistroCalendario(int CalendarioID, DateTime FechaPartido, int PartidoID)
         {
             this.CalendarioID = CalendarioID;
             this.FechaPartido = FechaPartido;
             this.PartidoID = PartidoID;
-            
-        }
 
+        }
+        /// <summary>
+        /// Inserta un nuevo registro en la tabla CalendarioPartidos.
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza con éxito.</returns>
         public bool InsertarDato()
         {
             clsConexion conexion = new clsConexion();
@@ -38,13 +62,16 @@ namespace SoccerLineF
             SqlCommand comando = new SqlCommand(insertar, conexion.conexion);
 
             comando.Parameters.AddWithValue("@CalendarioID", this.CalendarioID);
-            comando.Parameters.AddWithValue("@FechaPartido", SqlDbType.Date).Value=this.FechaPartido;
+            comando.Parameters.AddWithValue("@FechaPartido", SqlDbType.Date).Value = this.FechaPartido;
             comando.Parameters.AddWithValue("@PartidoID", this.PartidoID);
             comando.ExecuteNonQuery();
             return true;
         }
 
-
+        /// <summary>
+        /// Consulta todos los registros de la tabla CalendarioPartidos.
+        /// </summary>
+        /// <returns>Devuelve un DataTable con los resultados de la consulta.</returns>
         public DataTable Consultar()
         {
             clsConexion conexion = new clsConexion();
@@ -56,7 +83,11 @@ namespace SoccerLineF
             da.Fill(dt);
             return dt;
         }
-
+        /// <summary>
+        /// Elimina un registro de la tabla CalendarioPartidos según su identificador.
+        /// </summary>
+        /// <param name="CalendarioID">Identificador del calendario a eliminar.</param>
+        /// <returns>Devuelve true si la operación se realiza con éxito.</returns>
         public bool Eliminar(int CalendarioID)
         {
             clsConexion conexion = new clsConexion();
@@ -68,7 +99,10 @@ namespace SoccerLineF
             comando.ExecuteNonQuery();
             return true;
         }
-
+        /// <summary>
+        /// Modifica un registro de la tabla CalendarioPartidos.
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza con éxito.</returns>
         public bool Modificar()
         {
             clsConexion conexion = new clsConexion();
@@ -82,7 +116,11 @@ namespace SoccerLineF
             sql.ExecuteNonQuery();
             return true;
         }
-
+        /// <summary>
+        /// Consulta registros de la tabla CalendarioPartidos según la fecha del partido.
+        /// </summary>
+        /// <param name="FechaPartido">Fecha del partido para la consulta.</param>
+        /// <returns>Devuelve un DataTable con los resultados de la consulta.</returns>
         public DataTable Seleccionar(DateTime FechaPartido)
         {
             clsConexion conexion = new clsConexion();
